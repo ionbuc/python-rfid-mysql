@@ -9,7 +9,7 @@ import mysql.connector
 reader = SimpleMFRC522()
 
 # Conexión
-cnx = mysql.connector.connect(user='hugolan', password='1234', host='192.168.1.85', database='codigoIoT')
+cnx = mysql.connector.connect(user='kikelan', password='0123', host='192.168.100.106', database='codigoIot')
 # Cursor
 cursor = cnx.cursor()
 
@@ -17,10 +17,11 @@ cursor = cnx.cursor()
 try:
     # Leer el tag
     while True:
+
         print("Acercar el tag al lector")
         id, text = reader.read()
         print("ID: %s\nText: %s" % (id,text))
-        query_insert = "INSERT INTO rfid (nombre,texto,rfid) VALUES ('Hugo Vargas','" + text + "',"+ str (id) + ");"
+        query_insert = "INSERT INTO rfid (nombre,texto,rfid) VALUES ('Kike Castillo','" + text + "',"+ str (id) + ");"
         
         # Ejecutar cursor
         cursor.execute (query_insert)
