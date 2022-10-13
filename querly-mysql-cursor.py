@@ -11,7 +11,7 @@ cnx = mysql.connector.connect(user='kikelan',
 cursor = cnx.cursor()
 
 # Query
-query = ("SELECT id,nombre,temperatura,fecha FROM clima WHERE id=555;")
+query = ("SELECT id,fecha,nombre,texto,rfid FROM rfid WHERE id=1;")
 
 # Ejecutar cursor
 cursor.execute (query)
